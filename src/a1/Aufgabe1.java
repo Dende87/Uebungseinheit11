@@ -1,13 +1,10 @@
 package a1;
 
-import java.util.ArrayList;
 
 public class Aufgabe1 {
 
 	public static void main(String[] args) {
-		
-		ArrayList<Student> studenten= new ArrayList<Student>();
-		
+				
 		Student admin = new Student();
 		
 		Student dende = new Student();
@@ -19,15 +16,12 @@ public class Aufgabe1 {
 		Student thomas = new Student();
 		thomas.immatrikulieren(22);
 		
-		studenten.add(dende);
-		studenten.add(marcel);
-		studenten.add(thomas);
-		
-		System.out.println(admin.durchschnitt(studenten));
+		System.out.println(admin.durchschnitt());
 		
 		marcel.exmatrikulieren();
 		
-		System.out.println(admin.durchschnitt(studenten));
+		System.out.println(admin.durchschnitt());
+		System.out.println(admin.getStudentenZahl());
 	}
 
 }

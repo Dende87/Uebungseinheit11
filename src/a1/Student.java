@@ -1,29 +1,30 @@
 package a1;
 
-import java.util.ArrayList;
-
 public class Student {
 
 	private int alter = 0;
-		
-	void immatrikulieren(int alter){
+	
+	private static int studentenZahl = 0;
+	private static int alterSumme = 0;
+
+	void immatrikulieren(int alter) {
 		this.setAlter(alter);
+		alterSumme += alter;
+		studentenZahl++;
 	}
-	
-	void exmatrikulieren(){
+
+	void exmatrikulieren() {
+		alterSumme -= this.alter;
 		this.setAlter(0);
+		studentenZahl--;
 	}
-	
-	double durchschnitt(ArrayList<Student> student){
-		
-		double x = 0;
-		int counter = 0;
-		for(Student s : student){
-			x = x + s.getAlter();
-			counter++;
-		}
-		
-		return x/counter;
+
+	double durchschnitt() {
+		return alterSumme / studentenZahl;
+	}
+
+	public int getStudentenZahl() {
+		return studentenZahl;
 	}
 
 	public int getAlter() {
